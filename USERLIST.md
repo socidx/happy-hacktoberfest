@@ -4,3 +4,5 @@
 - Hackerz
 - splinterhead
 - smort much
+- DahBest
+- Azkairah
