@@ -1,0 +1,70 @@
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap");
+    /* Some styling */
+    
+    body {
+        font-family: "open sans", sans-serif;
+    }
+    
+    h1 {
+        font-size: 4rem;
+    }
+    
+    .bounce {
+        animation-name: bounce;
+    }
+    
+    .bouncing-letters span {
+        animation-timing-function: linear;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        display: inline-block;
+    }
+    
+    @keyframes bounce {
+        20%,
+        50%,
+        80%,
+        to {
+            transform: scale(1, 1);
+        }
+        40% {
+            transform: scale(1.75, 0.65);
+        }
+        45% {
+            transform: scale(1.75, 0.65);
+        }
+        70% {
+            transform: scale(1.25, 0.75);
+        }
+        90% {
+            transform: scale(1.15, 0.85);
+        }
+    }
+</style>
+
+<h1 class="bouncing-letters">
+    <span>H</span><span>e</span><span>y</span><span>!</span>
+    <span>I</span><span>'</span><span>m</span>
+    <span>a</span>
+    <span>b</span><span>o</span><span>u</span><span>n</span><span>c</span><span>i</span><span>n</span><span>g</span>
+    <span>t</span><span>e</span><span>x</span><span>t</span>
+</h1>
+
+<script>
+    document.querySelectorAll(".bouncing-letters>span").forEach((element) => {
+        element.addEventListener("mouseover", (e) => bounce(e.target));
+    });
+
+    function bounce(letter) {
+        if (!letter.classList.contains("bounce")) {
+            letter.classList.add("bounce");
+            setTimeout(
+                function() {
+                    letter.classList.remove("bounce");
+                },
+                1000
+            );
+        }
+    }
+</script>
