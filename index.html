@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <script src="script.js"> </script>
+    <style>
+        .tdclass
+        {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+            color: white;
+            
+        }
+        .table td {
+    padding: 10px;
+    color: ba;
+  }
+    </style>
+</head>
+
+<body ng-app="myapp">
+<div ng-controller="products">
+    <table dir="rtl" cellspacing="0" style="width:100%; height:200px;">
+        <tr ng-repeat="(key, value) in data ">
+            <td ng-repeat="(key, value) in value   " ng-style="{'background-color': (value == null) ? nullcell_color :
+                (value == 'A') ? Acell_color : (value == 'B') ? Bcell_color : (value == 'C') ? Ccell_color : (value == 'C') ? Ccell_color :
+                (value == 'D') ? Dcell_color : (value == 'E') ? Ecell_color : 'white' } " class="tdclass">
+                <div>{{value}}</div>
+            </td>
+            
+        </tr>
+    </table>
+</div>
+
+</body>
+
+</html>
